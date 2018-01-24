@@ -33,9 +33,18 @@ def arrayCheck(nums):
     return find1 and find2 and find3
 
 print(arrayCheck([1, 1, 2, 3, 1]))
+print(arrayCheck([1, 1, 2, 4, 1]))
+print(arrayCheck([1, 1, 2, 1, 2, 3]))
 
-    # CODE GOES HERE
+def arrayCheck2(nums):
+    i = 0
+    while i < len(nums):
+        if nums[i:i+3] == range(1,4):
+            return True
+            break
+        i += 1
 
+print(arrayCheck2([1, 1, 2, 3, 1]))
 
 #####################
 ## -- PROBLEM 2 -- ##
@@ -51,8 +60,11 @@ print(arrayCheck([1, 1, 2, 3, 1]))
 # stringBits('Heeololeo') = 'Hello'
 
 def stringBits(str):
-    pass
-  # CODE GOES HERE
+    return str[::2]
+
+print(stringBits('Hello'))
+print(stringBits('Hi'))
+print(stringBits('Heeololeo'))
 
 
 #####################
@@ -72,8 +84,14 @@ def stringBits(str):
 # end_other('abc', 'abXabc') = True
 
 def end_other(a, b):
-    pass
-  # CODE GOES HERE
+    if len(a) > len(b):
+        
+    while i < len(nums):
+        if nums[i:i+3] == range(1,4):
+            return True
+            break
+        i += 1
+
 
 #####################
 ## -- PROBLEM 4 -- ##
