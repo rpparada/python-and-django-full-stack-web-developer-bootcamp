@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Primera Aplicacion</title>
+    <title>Primera Aplicacion - Prueba carga de fotos</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
   </head>
   <body>
-    <h1>Hola, este es index.html</h1>
-    {{ insert_me }}
+    <h1>Hola, este es Hitchens</h1>
+    <img src="{% static 'images/hitchens.jpg' %}" alt="Error!">
   </body>
 </html>
