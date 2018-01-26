@@ -3,6 +3,38 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title>Django - Desplegando datos desde tablas!</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}/">
+  </head>
+  <body>
+    <h1>Hola!!</h1>
+    <h2>Esto son tus datos desde las tablas:</h2>
+    <div class="djangotwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Nombre Sitio</th>
+          <th>Fecha de Acceso</th>
+        </thead>
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>Registros no fueron encontrados!</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
     <title>Primera Aplicacion - Prueba carga de fotos</title>
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
   </head>
@@ -10,4 +42,4 @@
     <h1>Hola, este es Hitchens</h1>
     <img src="{% static 'images/hitchens.jpg' %}" alt="Error!">
   </body>
-</html>
+</html> -->
