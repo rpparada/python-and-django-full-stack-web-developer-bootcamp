@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Modelos - Django Unidad</title>
+    <link rel="stylesheet" href="{% static "modelos_aplicacion/css/modelo.css" %}"/>
+  </head>
+  <body>
+    <h1>Modelos - Django Unidad</h1>
+    <div class="modeloscss">
+      {% if acceso_reg %}
+      <table>
+        <thead>
+          <th>Nonbre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+        </thead>
+        {% for acc in acceso_reg %}
+        <tr>
+          <td>{{ acc.nombre }}</td>
+          <td>{{ acc.apellido }}</td>
+          <td>{{ acc.email }} </td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>Registros no encontrados</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
