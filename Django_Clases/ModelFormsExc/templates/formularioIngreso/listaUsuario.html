@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de Usuario desde Base de Datos</title>
+  </head>
+  <body>
+    <h1>Lista de Usuarios desde BD</h1>
+    {% if acceso_registros %}
+    <table>
+      <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+      </thead>
+      {% for reg in acceso_registros %}
+      <tr>
+        <td>{{ reg.nombre }}</td>
+        <td>{{ reg.apellido }}</td>
+        <td>{{ reg.email }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>NO HAY USUARIOS REGISTRADOS</p>
+    {% endif %}
+  </body>
+</html>
