@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nivel 3 - Unidad Django</title>
+  </head>
+  <body>
+    <h1>Nivel 3 - Unidad Django</h1>
+    <h2>Lista de Usuarios</h2>
+    {% if usuarios %}
+    <ol>
+      {% for usuario in usuarios %}
+      <li>Informacion de Usuarios</li>
+      <ul>
+        <li>Nombre : {{ usuario.nombre }}</li>
+        <li>Apellido : {{ usuario.apellido }}</li>
+        <li>Email : {{ usuario.email }}</li>
+      </ul>
+      {% endfor %}
+    {% else %}
+    <p>Lista Vacia</p>
+    </ol>
+    {% endif %}
+  </body>
+</html>

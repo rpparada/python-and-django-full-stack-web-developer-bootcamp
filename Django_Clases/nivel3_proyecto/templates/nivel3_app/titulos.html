@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nivel 3 - Unidad Django</title>
+  </head>
+  <body>
+    <h1>Nivel 3 - Unidad Django</h1>
+    {% if titulos %}
+    <table>
+      <thead>
+        <th>Nombre Titulo</th>
+        <th>Duracion</th>
+      </thead>
+      {% for titulo in titulos %}
+      <tr>
+        <td>{{titulo.nombreCarrera}}</td>
+        <td>{{titulo.duracion}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>Lista de Titulos Vacios</p>
+    {% endif %}
+  </body>
+</html>
