@@ -2,9 +2,10 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render,get_object_or_404,redirect
-from djano.utils import timezone
+from django.utils import timezone
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from django.views.generic import TemplateView,ListView,DetailView,CreateView,UpdateView,DeleteView
 from blog.models import Post,Comment
@@ -45,7 +46,7 @@ class DraftListView(LoginRequiredMixin,ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__isnull=True).order_by('create_date')
+        return Post.objects.filter(published_date__isnull=True).order_by('created_date')
 
 ########################################
 ########################################
@@ -68,7 +69,7 @@ def add_comment_to_post(request,pk):
             return redirect('post_detail',pk=post.pk)
     else:
         form = CommentForm()
-    return render(request,'blog/comment_form.html'.{'form':form})
+    return render(request,'blog/comment_form.html',{'form':form})
 
 @login_required
 def comment_approve(request,pk):
