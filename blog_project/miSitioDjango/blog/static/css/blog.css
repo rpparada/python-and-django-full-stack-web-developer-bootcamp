@@ -12,6 +12,10 @@
   margin-bottom: 10px;
 }
 
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+}
 .bigbrand{
   font-size: 1.5em;
 }
